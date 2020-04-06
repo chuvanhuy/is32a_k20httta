@@ -1,0 +1,24 @@
+body {
+	background-color: white;
+}
+
+a {
+	font-size: 24px;
+}
+
+a:link {
+	color: #9f224e;	 
+	text-decoration-line: none;
+}
+
+a:hover {
+	color: blue;
+}
+
+a:active {
+	color: blue;
+}
+
+a:visited {
+	color: #9f224e;	 
+}
