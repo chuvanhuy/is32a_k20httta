@@ -80,5 +80,47 @@
 			</ul>
 		</div>
 	</div>
+	<div style="clear: both; padding-bottom: 50px;">
+		<button type="button" onclick="window.alert('Xin chào!')">Test</button>
+	</div>
+
+	<script type="text/javascript">
+		var a;
+		var c;
+		a = "Xin chào";
+		b = a + " Bùi Huế";
+		// Hiển thị cách 1
+		// window.alert(b);
+		// Hiển thị cách 2
+		document.write(b);
+		document.write(c);
+
+		// Khai báo mảng người yêu
+		var nguoiyeu;
+		nguoiyeu = ["Mơ", "Mận", "Đào", "Chanh", "Xả"];
+
+		// In tên từng cô
+		document.write(nguoiyeu[0]); // In ra cô "Mơ"
+		document.write(nguoiyeu[3]); // In ra cô "Chanh"
+
+		// In tên của tất cả các cô người yêu ra màn hình
+		for (i=0; i<= nguoiyeu.length-1; i++) {
+			document.write(nguoiyeu[i]);	// Lần lượt in ra Mơ, Mận, Đào, Chanh, Xả
+			// in_gia_tri(nguoiyeu[i]);
+		}
+
+
+		function in_gia_tri(x) {
+			window.alert(x);
+		}
+
+		// Khai báo đối tượng Ô TÔ với 3 thuộc tính: Kiểu xe, Đời xe, Màu sắc
+		var oto={kieu_xe:"Toyota Vios", model:2020, mau_sac:"Vàng cát"};
+
+		// Lấy được thuộc tính kiểu xe; in nó ra màn hình
+		document.write(oto.kieu_xe);
+
+
+	</script>
 </body>
 </html>

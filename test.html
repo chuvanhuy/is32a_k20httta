@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Freetuts.net - Validate form = Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript">
+            function validateForm()
+            {
+                alert("Dư liệu không được để trống, không được giống nhau");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post" action="" onsubmit="return validateForm()">
+            Username: <input type="text" name="username" id="username" value=""/> <br/><br/>
+            Password: <input type="password" name="password" id="password" value=""/> <br/><br/>
+            <input type="submit" name="login" value="Login"/>
+        </form>
+    </body>
+</html>
