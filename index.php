@@ -6,6 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+	<?php 
+		echo "XIN CHÀO. ĐÂY LÀ DÒNG PHP ĐẦU TIÊN CỦA TÔI.";
+
+		echo "<br>"."Hôm nay là: ".date("Y/m/d H:m:s");
+	;?>
+
 	<h1 style="color: red;">Chào mừng bạn đến với Website K20HTTTA</h1>
 	<h3>
 		<a href=".\index.html">Trang chủ</a> | <a href=".\gioi_thieu.html">Giới thiệu</a> | <a href=".\tin_tuc.html">Tin tức</a> | <a href=".\san_pham.html">Sản phẩm</a></a> | <a href=".\lien_he.html">Liên hệ</a>
