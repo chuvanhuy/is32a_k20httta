@@ -15,72 +15,48 @@
 		<div style="float: left; width: 700px;">
 			TIN TỨC		
 
-			<h4><a href="tin_tuc_chi_tiet.html"><font color="red">HLV của Arsenal nhiễm nCoV !</font></a></h4>
+			<?php 
+				// 1. Chuỗi kết nối đến CSDL
+				$ket_noi = mysqli_connect("localhost", "root", "", "k20httta_db");
+
+				// 2. Viết câu lệnh SQL để lấy ra dữ liệu mong muốn
+				$sql = "
+					SELECT *
+					FROM tbl_tin_tuc
+					ORDER BY id_tin_tuc DESC
+				";
+				
+				// 3. Thực hiện truy vấn để lấy ra dữ liệu mong muốn
+				$noi_dung_tin_tuc = mysqli_query($ket_noi, $sql);
+
+				// 4. Hiển thị dữ liệu mong muốn
+				while ($row = mysqli_fetch_array($noi_dung_tin_tuc)) {
+				// Đẩy đoạn HTML lặp đi lặp lại vào đây
+			;?>
+			<h4><a href="tin_tuc_chi_tiet.php?id=<?php echo $row["id_tin_tuc"];?>"><font color="red"><?php echo $row["tieu_de"];?></font></a></h4>
 			<table>
 				<tr>
 					<td>
-						<img src="./img/25908062-8107013-arsenal-boss-9181-9177-1584057941.jpg" width="180px" height="auto">
+						<img src="./img/<?php 
+						if ($row["anh_minh_hoa"]<>"") {
+							echo $row["anh_minh_hoa"];
+						} else {
+							echo "no-image.png";
+						}
+						;?>" width="180px" height="auto">
 					</td>
 					<td style="vertical-align: top;">
-						<p><i>Mikel Arteta dương tính với nCoV, và có thể đã lây lan cho các thành viên trong đội một cũng như ban huấn luyện của Arsenal.</i></p>	
+						<p><i><?php echo $row["mo_ta"];?></i></p>	
 					</td>
 				</tr>
 			</table>
 			<hr>
+			<?php
+				}
 
-			<h4><a href="tin_tuc_chi_tiet.html"><font color="red">Ronaldinho ký tặng bạn tù</font></a></h4>
-			<table>
-				<tr>
-					<td>
-						<img src="./img/es1z2v-xsaa9osb-jpeg-158405584-3409-9657-1584055890.jpg" width="180px" height="auto">
-					</td>
-					<td style="vertical-align: top;">
-						<p><i>Cựu cầu thủ hay nhất thế giới Ronaldinho bắt đầu chấp nhận đồ ăn và giao lưu với những tù nhân khác.</i></p>	
-					</td>
-				</tr>
-			</table>	
-			<hr>	
-			
-
-			<h4><a href="tin_tuc_chi_tiet.html"><font color="red">CĐV Liverpool nguyền rủa thủ môn Adrian</font></a></h4>
-			<table>
-				<tr>
-					<td>
-						<img src="./img/adrian-5948-1584034424.jpg" width="180px" height="auto">
-					</td>
-					<td style="vertical-align: top;">
-						<p><i>Thủ môn Adrian phải hứng thịnh nộ sau khi mắc lỗi khiến Liverpool bị Atletico Madrid loại ở vòng 1/8 Champions League.</i></p>
-					</td>
-				</tr>
-			</table>	
-			<br>	
-			
-
-			<h4><a href="tin_tuc_chi_tiet.html"><font color="red">Neymar khóc sau chiến thắng của PSG</font></a></h4>
-			<table>
-				<tr>
-					<td>
-						<img src="./img/top-2341-1583977621.jpg" width="180px" height="auto">
-					</td>
-					<td style="vertical-align: top;">
-						<p><i>Cầu thủ đắt giá nhất thế giới Neymar gục đầu khóc sau khi PSG vượt qua Borussia Dortmund để vào tứ kết Champions League tối 11/3.</i></p>
-					</td>
-				</tr>
-			</table>		
-			<br>
-			
-
-			<h4><a href="tin_tuc_chi_tiet.html"><font color="red">Josip Ilicic - người viết tình ca ở Atalanta</font></a></h4>
-			<table>
-				<tr>
-					<td>
-						<img src="./img/a-1971-1583969104.jpg" width="180px" height="auto">
-					</td>
-					<td style="vertical-align: top;">
-						<p><i>Song hành với hành trình lãng mạn đưa Atalanta vào tứ kết Champions League, Josip Ilicic cũng gây ấn tượng với câu chuyện về ý chí vươn lên.</i></p>
-					</td>
-				</tr>
-			</table>		
+				// 5. Đóng  kết nối
+				mysqli_close($ket_noi);
+			;?>
 		</div>
 		<div style="float: left; width: 200px;">
 			TIN ĐƯỢC NHIỀU NGƯỜI ĐỌC
