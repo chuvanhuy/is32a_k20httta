@@ -1,3 +1,22 @@
+<?php 
+	session_start();
+	if(!$_SESSION['email']) {
+		echo 
+		"
+			<script type='text/javascript'>
+				window.alert('Bạn không có quyền truy cập.');
+			</script>
+		";
+
+		// Chuyển người dùng vào trang quản trị tin tức
+		echo 
+		"
+			<script type='text/javascript'>
+				window.location.href = './dang_nhap.php'
+			</script>
+		";
+	}
+;?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +34,7 @@
 		</tr>
 		<?php 
 			// 1. Chuỗi kết nối đến CSDL
-			$ket_noi = mysqli_connect("localhost", "root", "", "k20htttb_db");
+			$ket_noi = mysqli_connect("localhost", "root", "", "k20httta_db");
 
 			// 2. Viết câu lệnh SQL để lấy ra dữ liệu mong muốn
 			$sql = "
